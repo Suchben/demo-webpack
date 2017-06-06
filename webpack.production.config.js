@@ -11,7 +11,7 @@ module.exports = {
     },//已多次提及的唯一入口文件
     output: {
         path: path.resolve(__dirname, "build"),//打包后的文件存放的地方
-        filename: "[name]-[hash].js"//打包后输出文件的文件名
+        filename: "[name]-[hash:6].js"//打包后输出文件的文件名
     },
     module: {
         rules: [
@@ -59,6 +59,6 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),//热加载插件
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin(),
-        new ExtractTextPlugin("[name]-[hash].css")
-    ]
+        new ExtractTextPlugin("[name]-[hash:6].css")
+    ],
 }
